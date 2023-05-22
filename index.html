@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="img/logo-coderhouse.png" type="image/x-icon">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Pseudoclases y BEM</title>
+</head>
+<body>
+    
+<header class="header"> <!--BLOQUE-->
+    <a href="index.html">
+        <img src="img/logo-coderhouse.png" alt="Logo Coderhouse" class="header__logo"> <!--BLOQUE + ELEMENTO-->
+    </a>
+
+    <!-- PARA NOMBRAR LOS ELEMENTOS DE BEM, VA PRIMERO EL NOMBRE DEL BLOQUE (header) luego doble guion bajo (__) y por ultimo el nombre del elemento -->
+    <nav>
+        <ul class="header__menu">
+            <li>
+                <a href="index.html">Inicio</a>
+            </li>
+            
+            <li>
+                <a href="pages/pseudo.html">Pseudo</a>
+            </li>
+            
+            <li>
+                <a href="pages/carrito.html">Carrito</a>
+            </li>
+            
+            <li>
+                <a href="#">Enlace</a>
+            </li>
+            
+            <li>
+                <a href="#">Enlace</a>
+            </li>            
+        </ul>
+    </nav>
+</header>
+
+<section class="banner">
+    <h1>Pseudoclases y método BEM</h1>
+
+</section>
+
+<main>
+    <h2>Mira nuestros productos principales</h2>
+    <!-- <a href="pages/pseudo.html">Enlace de prueba</a> -->
+
+    <div class="filtro-productos">
+        <!-- INPUTS -->
+        <input type="radio" name="seleccionado" id="remeras">
+        <input type="radio" name="seleccionado" id="pcs">
+        <input type="radio" name="seleccionado" id="todos" checked>
+
+        <!--LABEL DE LOS INPUTS-->
+        <div class="container-labels">
+            <label for="remeras">Remeras</label>
+            <label for="pcs">Computadoras</label>
+            <label for="todos">Todos los productos</label>
+        </div>
+
+        <div class="padre-cards">
+            <!-- Card 1 -->
+            <div class="padre-cards__card remeras">
+                <img src="img/remera1.jpg" alt="Remera HTML 5">
+    
+                <h4>Remera HTML</h4>
+                <p>$5.000</p>
+    
+                <p>Esta remera está hecha de algodón y está disponible en distintos talles.</p>
+                <button class="boton">Agregar al carrito</button>
+            </div>
+    
+            <!-- Card 2 -->
+            <!-- modificador: el nombre del padre (padre-cards) + el nombre del elemento (card) + el nombre especial (oferta) -->
+            <!-- El modificador va con "--" -->
+            <div class="padre-cards__card padre-cards__card--oferta remeras">
+                <img class="card-imagen" src="img/remera2.jpg" alt="Remera JavaScript">
+    
+                <h4>Remera JavaScript</h4>
+                <p>$5.000</p>
+    
+                <p>Esta remera está hecha de algodón y está disponible en distintos talles.</p>
+                <button class="boton">Agregar al carrito</button>
+            </div>
+    
+            <!-- Card 3 -->
+            <div class="padre-cards__card remeras">
+                <img class="card-imagen" src="img/remera3.jpg" alt="Remera Github">
+    
+                <h4>Remera Github</h4>
+                <p>$5.000</p>
+    
+                <p>Esta remera está hecha de algodón y está disponible en distintos talles.</p>
+                <button class="boton">Agregar al carrito</button>
+            </div>
+    
+            <!-- Card 4 -->
+            <div class="padre-cards__card remeras">
+                <img class="card-imagen" src="img/remera4.jpg" alt="Remera SASS">
+    
+                <h4>Remera SASS</h4>
+                <p>$5.000</p>
+    
+                <p>Esta remera está hecha de algodón y está disponible en distintos talles.</p>
+                <button class="boton">Agregar al carrito</button>
+            </div>
+    
+            <!-- Card 5 -->
+            <div class="padre-cards__card remeras">
+                <img class="card-imagen" src="img/remera5.jpg" alt="Remera Angular JS">
+    
+                <h4>Remera Angular JS</h4>
+                <p>$5.000</p>
+    
+                <p>Esta remera está hecha de algodón y está disponible en distintos talles.</p>
+                <button class="boton">Agregar al carrito</button>
+            </div>
+    
+            <!-- Card 6 -->
+            <div class="padre-cards__card remeras">
+                <img class="card-imagen" src="img/remera6.jpg" alt="Remera Node JS">
+    
+                <h4>Remera Node JS</h4>
+                <p>$5.000</p>
+    
+                <p>Esta remera está hecha de algodón y está disponible en distintos talles.</p>
+                <button class="boton">Agregar al carrito</button>
+            </div>
+    
+            <!-- Card 7 -->
+            <div class="padre-cards__card pcs">
+                <img class="card-imagen" src="img/pc1.jpg" alt="Computadora">
+    
+                <h4>Compu Genérica</h4>
+                <p>$250.000</p>
+    
+                <p>Lindas y funcionales computadoras portátiles.</p>
+
+                <button class="boton">Agregar al carrito</button>
+            </div>
+    
+            <!-- Card 8 -->
+            <div class="padre-cards__card pcs">
+                <img class="card-imagen" src="img/pc2.jpg" alt="Computadora 2">
+    
+                <h4>Compu Genérica</h4>
+                <p>$250.000</p>
+    
+                <p>Lindas y funcionales computadoras portátiles.</p>
+                <button class="boton">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    
+</main>
+
+<section>
+    <h2>En Coderhouse somos:</h2>
+
+    <img class="nerds" src="img/nerds-coder.jpg" alt="Nerds Coder">
+</section>
+
+<section>
+    <h3 class="titulo-redes">Seguinos en  todas nuestras redes sociales</h3>
+
+    <div class="padre-redes">
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="img/instagram.svg" alt="Logo Instagram" class="redes">
+        </a>
+    
+        <a href="https://www.tiktok.com" target="_blank">
+            <img src="img/tiktok-icon.svg" alt="Logo Tiktok" class="redes">
+        </a>
+    
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="img/facebook.svg" alt="Logo Facebook" class="redes">
+        </a>
+    
+        <a href="https://api.whatsapp.com/send?phone=5491112345678" target="_blank">
+            <img src="img/whatsapp-icon.svg" alt="Logo Whatsapp" class="redes">
+        </a>
+    </div>
+</section>
+
+<footer>
+    <h5>Todos los derechos reservados para la comisión 54260</h5>
+</footer>
+
+</body>
+</html>

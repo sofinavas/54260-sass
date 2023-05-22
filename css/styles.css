@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #282829;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #a52121;
+    gap: 18px;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+}
+
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-around;
+    }   
+}
+
+img {
+    max-width: 100%;
+}
+
+.header__logo {
+    width: 80px;
+}
+
+.header__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (min-width: 500px) {
+    .header__menu {
+        flex-direction: row;
+    }
+}
+
+/*No hemos visitado un enlace*/
+/* .header__menu li a:link {
+    color: blue;
+} */
+
+/*Cuando un link ya ha sido visitado*/
+/* .header__menu li a:visited {
+    color: green;
+} */
+
+/*Selector:pseudoclase*/
+/*Dentro de las pseudoclases pueden editar todo lo que necesiten. "No me digan que el cielo es el limite cuando ya hay huellas en la luna" D.M*/
+.header__menu li a:hover {
+    color: yellow;
+}
+
+/*Active*/
+.header__menu li a:active {
+    background-color: orange;
+    color: red;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin: 30px 0;
+    color: #fff;
+}
+
+.header__menu li a {
+    color: white;
+    font-weight: 700;
+}
+
+/*BANNER*/
+.banner {
+    background-image: url('../img/codigo1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*EFECTO PARALLAX*/
+    background-attachment: fixed;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner h1 {
+    background-color: rgba(234, 234, 234, .5);
+    color: black;
+}
+
+/*CARDS*/
+.padre-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+@media (min-width: 768px) {
+    .padre-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        gap: 30px;
+    }
+}
+
+@media (min-width: 992px) {
+    .padre-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+.padre-cards__card {
+    width: 18rem;
+    -webkit-box-shadow: 0px 0px 17px 0px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 17px 0px rgba(255,255,255,1);
+    box-shadow: 0px 0px 17px 0px rgba(255,255,255,1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.padre-cards__card h4, .padre-cards__card p {
+    color: #fff;
+}
+
+.padre-cards__card button {
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.padre-cards__card--oferta {
+    background-color: #a52121;
+}
+/*NERDS Y FOOTER*/
+.nerds {
+    display: block;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: rgb(234,234,234);
+    margin-top: 40px;
+    padding: 30px;
+    text-align: center;
+}
+
+.padre-redes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .padre-redes {
+        flex-direction: column;
+        position: fixed;
+        top: 40%;
+        right: 2%;
+    }
+
+    .titulo-redes {
+        display: none;
+    }
+}
+
+.redes {
+    width: 35px;
+}
+
+/*Pseudoclases*/
+/*pseudoclase not*/
+/*last-of-type | first-of-type | nth*/
+.pseudolista li:not(:first-of-type) {
+    background-color: #a52121;
+    margin-bottom: 15px;
+}
+
+/*nth-child: numero | odd (impares) | even (pares)*/
+.otra-lista li:nth-child(even) {
+    background-color: orange;
+}
+
+/*carrito*/
+#carrito-completo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    width: 100%;
+}
+
+.item-carrito img {
+    width: 150px;
+}
+
+.item-carrito:nth-child(even) {
+    background-color: #a52121;
+}
+
+/*FILTRO PRODUCTOS*/
+.container-labels {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.container-labels label {
+    cursor: pointer;
+    padding: 8px 15px;
+}
+
+/*DAR USANDO PSEUDOS*/
+.container-labels label:nth-child(odd) {
+    background-color: #a52121;
+}
+
+.container-labels label:nth-child(even) {
+    background-color: #fff;
+}
+
+/*OCULTAR LOS RADIO*/
+#remeras,  #pcs, #todos {
+    display: none;
+}
+
+.remeras, .pcs {
+    display: none;
+}
+
+#remeras:checked ~ .padre-cards .remeras,
+#pcs:checked ~ .padre-cards .pcs {
+    display: flex;
+}
+
+#todos:checked ~ .padre-cards .remeras,
+#todos:checked ~ .padre-cards .pcs {
+    display: flex;
+}
